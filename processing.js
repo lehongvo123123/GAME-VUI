@@ -18,7 +18,7 @@ var player = {
     y:760,
     width:40,
     height:40,
-    step:5,
+    step:10,
 }
 var isMoveRight=false;
 var isMoveLeft=false;
@@ -155,6 +155,7 @@ function playerTouchCanvas(){
         player.y=780;
         speedRight+=10;
         speedLeft+=10;
+        setUpPosition()
     }
     
 }
@@ -163,31 +164,40 @@ function playerTouchObtacble(){
     alert("Game Over")
        player.x=400;
        player.y=780;
+       setUpPosition()
    }
     if(player.x>x && player.x<x+160 && player.y>y+180 && player.y<y+40+180){ 
      alert("Game Over")
         player.x=400;
         player.y=780;
+        setUpPosition()
     }
      if(player.x>x1 && player.x<x1+160 && player.y>y1&& player.y<y1+40){ 
      alert("Game Over")
         player.x=400;
         player.y=780;
+        
+        setUpPosition()
     }
     if(player.x>x1 && player.x<x1+160 && player.y>y1+200 && player.y<y1+40+200){ 
         alert("Game Over")
            player.x=400;
            player.y=780;
+           
+           setUpPosition()
        }
 
  
 } 
+function setUpPosition(){
+        isMoveLeft = false;
+        isMoveRight=false;
+        isMoveUp=false;
+        isMoveDown=false;
+
+}
 
 function runCanvas(){
-
-
-
-
     context.clearRect(0,0,canvas.clientWidth,canvas.clientHeight)
          setRectangle();
          moveObtacble();
@@ -195,7 +205,9 @@ function runCanvas(){
          movePlayerNow();
          playerTouchCanvas();
          playerTouchObtacble();
+         setUpPosition()
          requestAnimationFrame(runCanvas);
          
 }
-runCanvas() 
+ 
+ runCanvas()  
