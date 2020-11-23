@@ -1,30 +1,30 @@
 
-var context = document.getElementById("canvas").getContext("2d");
-var showPoint = document.getElementById("showPoint");
+let context = document.getElementById("canvas").getContext("2d");
+let showPoint = document.getElementById("showPoint");
 //--------
-var x=0;
-var y=20;
-var x1=700;
-var y1=380;
-var width=200;
-var height=40;
-var speedLeft=10;
-var speedRight=10;
-var fakeSpeedLeft=speedLeft;
-var fakeSpeedRight=-speedLeft;
+let x=0;
+let y=20;
+let x1=700;
+let y1=380;
+let width=200;
+let height=40;
+let speedLeft=10;
+let speedRight=10;
+let fakeSpeedLeft=speedLeft;
+let fakeSpeedRight=-speedLeft;
 
-var player = {
+let player = {
     x:400,
     y:760,
     width:40,
     height:40,
     step:10,
 }
-var isMoveRight=false;
-var isMoveLeft=false;
-var isMoveUp=false;
-var isMoveDown=false;
-var isMoveFast=false;
+let isMoveRight=false;
+let isMoveLeft=false;
+let isMoveUp=false;
+let isMoveDown=false;
+let isMoveFast=false;
 
 function setPlayer(){
     context.beginPath();
@@ -194,6 +194,8 @@ function setUpPosition(){
         isMoveRight=false;
         isMoveUp=false;
         isMoveDown=false;
+        isMoveFast=false;
+
 
 }
 
