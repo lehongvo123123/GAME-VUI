@@ -13,5 +13,4 @@ function runCanvas(){
          setUpPosition()
          requestAnimationFrame(runCanvas);    
 }
- 
  runCanvas()  
